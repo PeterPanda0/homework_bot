@@ -1,0 +1,8 @@
+Уникальные токены, для работы бота Ассистента:
+
+
+PRACTICUM - токен доступа к эндпоинту https://practicum.yandex.ru/api/user_api/homework_statuses/.
+
+TELEGRAM_TOKEN - токен телеграмм бота.
+
+TELEGRAM - id профиля студента Практикума в телеграмме.
