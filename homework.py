@@ -23,9 +23,9 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-PRACTICUM_TOKEN:str = os.getenv('PRACTICUM')
-TELEGRAM_TOKEN:str = os.getenv('TELEGRAM_TOKEN')
-TELEGRAM_CHAT_ID:str = os.getenv('TELEGRAM')
+PRACTICUM_TOKEN: str = os.getenv('PRACTICUM')
+TELEGRAM_TOKEN: str = os.getenv('TELEGRAM_TOKEN')
+TELEGRAM_CHAT_ID: str = os.getenv('TELEGRAM')
 
 RETRY_PERIOD = 600
 ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
