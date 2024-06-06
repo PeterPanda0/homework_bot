@@ -30,9 +30,6 @@ PRACTICUM_TOKEN: Optional[str] = os.getenv('PRACTICUM')
 TELEGRAM_TOKEN: Optional[str] = os.getenv('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID: Optional[str] = os.getenv('TELEGRAM')
 
-# Время (в секундах) для коррекции первого запроса.
-DELTA = 600
-# Время (в секундах) для ожидания перед отправкой следующего запроса.
 RETRY_PERIOD = 600
 ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
 HEADERS = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
@@ -169,7 +166,7 @@ def main():
     api_flag = False
     # Объявление экземпляра бота.
     bot = TeleBot(token=TELEGRAM_TOKEN)
-    timestamp = int(time.time()) - DELTA
+    timestamp = int(time.time()) - RETRY_PERIOD
     while True:
         try:
             response = get_api_answer(timestamp)
