@@ -60,7 +60,7 @@ def check_tokens() -> bool:
     empty_tokens: List[Optional[str]] = [
         name for name, token in tokens.items() if not token
     ]
-    if  empty_tokens:
+    if empty_tokens:
         logging.critical(
             f'Ошибка: Отсутствуют переменные: {", ".join(empty_tokens)}.'
         )
@@ -107,7 +107,7 @@ def get_api_answer(timestamp: int) -> Optional[Dict]:
             )
         return response.json()
     except requests.exceptions.RequestException as error:
-        raise APIError(f'Эндпоинт недоступен: {ENDPOINT}.')
+        raise APIError(f'Эндпоинт недоступен: {error}.')
     except json.decoder.JSONDecodeError:
         raise JSONDecodeError(
             'Ошибка преобразования ответа от сервера в json формат.'
